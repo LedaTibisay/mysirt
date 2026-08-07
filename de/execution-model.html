@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausführungsmodell - MySirt</title>
+	<link rel="stylesheet" href="../assets/css/design-principles.css">    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="canonical" href="https://www.mysirt.com/de/execution-model.html">
+    <meta name="description" content="MySirt ist eine domänenunabhängige Execution Engine, die aus DSL-Definitionen Executable Information Systems ableitet.">
+    <meta name="keywords" content="MySirt,Model Execution Engine,Execution Engine,DSL,Executable Information System,declarative model,runtime environment,model driven engineering">
+    <meta name="author" content="MySirt">
+    <meta property="og:title" content="MySirt – Execution Model">
+    <meta property="og:description" content="A domain-agnostic meta-model that generates complete operational systems from formal domain definitions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mysirt.com/de/execution-model.html">
+    <meta property="og:image" content="https://www.mysirt.com/assets/images/mysirt-preview.png">
+    <meta name="robots" content="index, follow">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJ7QZ4X3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FFJ7QZ4X3E');
+    </script>
+<link rel="alternate" hreflang="en" href="https://mysirt.com/en/execution-model.html">
+<link rel="alternate" hreflang="it" href="https://mysirt.com/it/execution-model.html">
+<link rel="alternate" hreflang="es" href="https://mysirt.com/es/execution-model.html">
+<link rel="alternate" hreflang="de" href="https://mysirt.com/de/execution-model.html">
+<link rel="alternate" hreflang="x-default" href="https://mysirt.com/en/execution-model.html">
+</head>
+<body>
+
+<header>
+    <div class="container  header-inner">
+        <div class="logo">
+            <a href="index.html"> <img src="../Mysirt_LoghoBlack.png" alt="MySirt"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="what-is.html">Was MySirt ist</a></li>
+                <li><a href="execution-model.html">Ausführungsmodell</a></li>
+                <li><a href="architecture.html">Architektur</a></li>
+                <li><a href="specifications.html">Spezifikationen</a></li>
+                <li><a href="operational-evidence.html">Operative Nachweise</a></li>
+                <li><a href="integration-transfer.html">Integration & Transfer</a></li>
+                <li><a href="evaluation-access.html">Evaluierungszugriff</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher"><a href="../en/execution-model.html">EN</a> | <a href="../it/execution-model.html">IT</a> | <a href="../es/execution-model.html">ES</a> | <span>DE</span></div>
+    </div>
+</header>
+<!-- 17/02/2026 CONTENUTI AGGIORNATI - MANCA SOLO IL DIAGRAMMA
+Stato reale della pagina
+
+Testo: ✔ finito
+Struttura: ✔ finita
+Diagramma concettuale: ➜ da aggiungere
+CSS: ➜ da fare
+
+Niente ER diagram.
+Niente schermate.
+Niente UI.
+
+Questa pagina deve sembrare una spiegazione di meccanismo, non una dimostrazione di prodotto.
+ -->
+<main>
+
+    <!-- PAGE TITLE -->
+    <section class="page-intro">
+        <div class="container">
+            <h1>Ausführungsmodell</h1>
+        </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="overview">
+        <div class="container">
+            <h2>Ausführungsprinzip</h2>
+
+            <p>
+                In MySirt wird das System nicht implementiert — es wird abgeleitet.
+            </p>
+
+            <p>
+                Anwendungen werden nicht direkt in Code geschrieben.
+                Sie werden aus strukturierten Modellen abgeleitet, die über das Ausführungs-Meta-Modell ausgedrückt werden.
+            </p>
+
+            <p>
+                Eine formale Definition beschreibt Daten, Verhalten und Verantwortlichkeiten.
+                Die Ausführungs-Engine interpretiert diese Definition und erzeugt
+                das operative System, das sie umsetzt.
+            </p>
+
+            <p>
+                Die laufende Anwendung bleibt eine direkte Konsequenz des Modells
+                und ist kein separates Artefakt, das sich unabhängig weiterentwickelt.
+            </p>
+            <div class="video-reveal video-reveal-model">
+                <button
+                    type="button"
+                    class="video-toggle"
+                    aria-expanded="false"
+                    aria-controls="final-video-panel"
+                    data-video-label="Vollständige Demonstration ansehen — 6:20"
+                    data-video-hide-label="Video ausblenden">
+                    Vollständige Demonstration ansehen — 6:20
+                </button>
+                <div
+                    id="final-video-panel"
+                    class="video-panel"
+                    hidden>
+                    <video controls preload="none" playsinline>
+                        <source src="../assets/video/MySirt_VideoFinal.mp4" type="video/mp4">
+                        Ihr Browser unterstützt kein HTML5-Video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DSL FOUNDATIONS -->
+    <section class="dsl-foundations">
+        <div class="container">
+
+            <h2>Grundlagen der ausführbaren DSL</h2>
+
+            <h3>Grunddefinition</h3>
+            <p>
+                Die MySirt DSL ist eine deklarative Sprache zur Definition vollständiger operativer Informationssysteme.
+                Sie beschreibt Struktur, Verhalten und organisatorische Regeln innerhalb einer einzigen formalen Definition.
+            </p>
+
+            <h3>Systemdimensionen</h3>
+            <p>
+                Ein MySirt-Modell definiert drei grundlegende Dimensionen eines Systems:
+            </p>
+            <ul>
+                <li><strong>Struktur</strong> — Entitäten, Felder und Beziehungen</li>
+                <li><strong>Verhalten</strong> — Trigger, Jobs und operative Regeln</li>
+                <li><strong>Organisation</strong> — Rollen und Zugriffsrichtlinien</li>
+            </ul>
+
+            <p>
+                Zusammen bilden diese Elemente die ausführbare Spezifikation der Anwendung.
+            </p>
+
+            <h3>Modell statt Code</h3>
+            <p>
+                Die DSL beschreibt, <strong>was</strong> das System tun soll, <strong>nicht wie</strong> es implementiert wird.
+                Die Ausführungs-Engine interpretiert das Modell und erzeugt die operative Anwendung.
+            </p>
+
+            <h3>Vollständige Systeme in einer Definition</h3>
+            <p>
+                Ein vollständiges Geschäftssystem kann in einer einzigen DSL-Datei definiert werden.
+                Die Definition umfasst Datenstrukturen, Workflows, Sicherheitsregeln
+                und Interaktionsstrukturen der Anwendung.
+            </p>
+
+            <h3>Operatives Verhalten im Modell</h3>
+            <p>
+                Trigger und Jobs ermöglichen es der DSL, operative Workflows direkt
+                innerhalb der Systemdefinition abzubilden.
+            </p>
+
+            <p>
+                Geschäftslogik wird deklarativ ausgedrückt, ohne prozedurale Implementierung.
+            </p>
+
+            <h3>Prinzip des Ausführungsmodells</h3>
+            <p>
+                Die DSL fungiert als ausführbares Modell des Systems.
+                Die Engine leitet die Laufzeitanwendung ab und setzt
+                die in der Spezifikation definierten Regeln durch.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="meta-model">
+        <div class="container">
+
+            <h2>Ausführungs-Meta-Modell</h2>
+            <p class="meta-quote">Was, nicht wie.</p>
+
+            <p>
+                MySirt basiert auf einem Meta-Modell, das die grundlegenden Strukturen
+                operativer Informationssysteme beschreibt. Anwendungen werden nicht Funktion für Funktion implementiert;
+                sie werden aus Modellen abgeleitet, die auf dieser Ausführungsstruktur basieren.
+            </p>
+
+<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 1200 430"
+		width="100%"
+		height="auto"
+		role="img"
+		aria-label="Diagramm des Ausführungs-Meta-Modells"
+		>
+		<title>Ausführungs-Meta-Modell</title>
+
+		<style>
+			.box {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 1.4;
+			rx: 14;
+			ry: 14;
+			}
+			.line {
+			stroke: currentColor;
+			stroke-width: 1.2;
+			fill: none;
+			}
+			.title {
+			font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+			font-size: 26px;
+			font-weight: 600;
+			fill: currentColor;
+			}
+			.heading {
+			font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+			font-size: 20px;
+			font-weight: 600;
+			fill: currentColor;
+			}
+			.item {
+			font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+			font-size: 17px;
+			fill: currentColor;
+			}
+			.note {
+			font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+			font-size: 20px;
+			fill: currentColor;
+			opacity: 1;
+			}
+		</style>
+
+		<!-- Top box -->
+		<rect x="430" y="78" width="340" height="64" class="box"/>
+		<text x="600" y="118" text-anchor="middle" class="heading">Operatives Meta-Modell</text>
+
+		<!-- Connector -->
+		<line x1="600" y1="142" x2="600" y2="195" class="line"/>
+
+		<!-- Horizontal connector -->
+		<line x1="170" y1="195" x2="1030" y2="195" class="line"/>
+
+		<!-- Vertical connectors -->
+		<line x1="170" y1="195" x2="170" y2="220" class="line"/>
+		<line x1="455" y1="195" x2="455" y2="220" class="line"/>
+		<line x1="745" y1="195" x2="745" y2="220" class="line"/>
+		<line x1="1030" y1="195" x2="1030" y2="220" class="line"/>
+
+		<!-- Daten box -->
+		<rect x="60" y="220" width="220" height="120" class="box"/>
+		<text x="170" y="280" text-anchor="middle" dominant-baseline="middle" class="heading" style="font-size: 18px;">Daten</text>
+
+		<!-- Verhalten box -->
+		<rect x="345" y="220" width="220" height="120" class="box"/>
+		<text x="455" y="280" text-anchor="middle" dominant-baseline="middle" class="heading" style="font-size: 18px;">Verhalten</text>
+
+		<!-- Organisation box -->
+		<rect x="635" y="220" width="220" height="120" class="box"/>
+		<text x="745" y="280" text-anchor="middle" dominant-baseline="middle" class="heading" style="font-size: 18px;">Organisation</text>
+
+		<!-- Darstellung box -->
+		<rect x="920" y="220" width="220" height="120" class="box"/>
+		<text x="1030" y="280" text-anchor="middle" dominant-baseline="middle" class="heading" style="font-size: 18px;">Darstellung</text>
+
+		<!-- Bottom note -->
+		<text x="600" y="390" text-anchor="middle" class="note">
+			Unterschiedliche Domänen befüllen dieselbe Ausführungsstruktur mit domänenspezifischen Konzepten, während das Meta-Modell konstant bleibt.
+		</text>
+		</svg>
+
+        </div>
+    </section>
+
+    <section class="execution-cycle">
+      <div class="container">
+
+<svg
+		viewBox="0 0 200 200"
+		width="100%"
+		height="auto"
+		role="img"
+		aria-label="Ausführungszyklus des Modells"
+		xmlns="http://www.w3.org/2000/svg"
+		>
+		<style>
+			.circle { stroke: #111; stroke-width: 0.9; fill: none; }
+			.arrow-path { stroke: #111; stroke-width: 1.1; fill: none; }
+			.text { fill: #111; font-family: "IBM Plex Sans", sans-serif; }
+			.label { font-size: 10px; }
+			.strong { font-weight: 500; fill: #111; }
+			.light { font-weight: 400; fill: #4f4f4f; }
+		</style>
+
+		<defs>
+			<marker id="arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+			<path d="M0,0 L5,2.5 L0,5 Z" fill="#111" />
+			</marker>
+		</defs>
+
+		<circle cx="100" cy="100" r="45" class="circle" />
+
+		<!-- Tangent arrows on circumference -->
+		<path d="M92.2 55.6 A45 45 0 0 1 107.8 55.6" class="arrow-path" marker-end="url(#arrow)" />
+		<path d="M144.3 92.2 A45 45 0 0 1 144.3 107.8" class="arrow-path" marker-end="url(#arrow)" />
+		<path d="M107.8 144.3 A45 45 0 0 1 92.2 144.3" class="arrow-path" marker-end="url(#arrow)" />
+		<path d="M55.7 107.8 A45 45 0 0 1 55.7 92.2" class="arrow-path" marker-end="url(#arrow)" />
+
+		<!-- Labels -->
+		<text x="100" y="35" text-anchor="middle" class="text label strong">
+			Modell definieren
+		</text>
+
+		<text x="165" y="103" text-anchor="start" class="text label light">
+			Ausführen
+		</text>
+
+		<text x="100" y="190" text-anchor="middle" class="text label strong">
+			Operatives System
+		</text>
+
+		<text x="35" y="103" text-anchor="end" class="text label light">
+			Definition ändern
+		</text>
+
+		</svg>
+
+      </div>
+      <p class="cycle-note">
+        Klarheit entsteht durch Ausführung.
+      </p>      
+    </section>
+
+    <section class="process">
+        <div class="container">
+
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h2>Domänenmodell definieren</h2>
+                    <ul>
+                        <li>Entitäten und Beziehungen</li>
+                        <li>Geschäftsregeln</li>
+                        <li>Rollen und Berechtigungen</li>
+                        <li>Workflow-Logik</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h2>Modell ausführen</h2>
+                    <ul>
+                        <li>Das Modell wird interpretiert</li>
+                        <li>Strukturen werden validiert</li>
+                        <li>Abhängigkeiten werden aufgelöst</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h2>Operatives System</h2>
+                    <ul>
+                        <li>Ausführbare Umgebung, abgeleitet aus dem Modell</li>
+                        <li>Verhalten wird durch Definitionen gesteuert</li>
+                        <li>Verantwortlichkeiten sind im System verankert</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h2>Strukturell iterieren</h2>
+                    <ul>
+                        <li>Modell ändern</li>
+                        <li>System regenerieren</li>
+                        <li>Strukturelle Kohärenz erhalten</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTINUOUS OPERATION -->
+    <section class="continuous-operation">
+        <div class="container">
+            <h2>Kontinuierlicher Modellbetrieb</h2>
+            <p>
+                Das generierte System ist kein endgültiges Artefakt.
+                Die operative Umgebung bleibt während ihres gesamten Lebenszyklus aus dem Modell abgeleitet.
+            </p>
+            <p>
+                Die Systementwicklung erfolgt durch Änderung der Definitionen,
+                nicht durch Anpassung der Implementierung.
+            </p>
+        </div>
+    </section>
+    
+    <!-- REGENERATION -->
+    <section class="regeneration">
+        <div class="container">
+            <h2>Strukturelle Regeneration</h2>
+            <p>
+                Änderungen auf Modellebene werden konsistent auf das System übertragen.
+                Das Modell bleibt die einzige Quelle der Wahrheit.
+            </p>
+        </div>
+    </section>
+
+    <!-- MODEL PRIMARY -->
+    <section class="model-primary">
+        <div class="container">
+            <h2>Das Modell als primäres Artefakt</h2>
+            <p>
+                Das Modell ist keine Dokumentation. Es ist eine ausführbare Spezifikation.
+                Das System ist die Ausführung des Modells.
+            </p>
+        </div>
+    </section>
+
+    <!-- CUSTOM CODE -->
+    <section class="custom-code">
+        <div class="container">
+            <h2>Kontrollierte Erweiterung</h2>
+            <p>
+                Benutzerdefiniertes Verhalten kann an definierten Erweiterungspunkten ergänzt werden.
+                Manuelle Logik arbeitet innerhalb der modellbasierten Struktur,
+                ohne diese zu ersetzen.
+            </p>
+        </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="impact">
+        <div class="container">
+            <h2>Technischer Impact</h2>
+            <p>
+                Der Entwicklungsaufwand verlagert sich vom Schreiben von Code
+                zur Definition von Verhalten.
+                Die Komplexität verschiebt sich vom Implementierungsvolumen
+                zur Klarheit des Modells.
+            </p>
+        </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why-change">
+        <div class="container">
+            <h2>Warum dies die Entwicklung verändert</h2>
+            <p>
+                Traditionelle Entwicklung ist code-first und die Struktur entsteht im Laufe der Zeit.
+                MySirt ist model-first: Die Struktur wird von Anfang an definiert und die Logik formalisiert.
+                Dies verlagert die Entwicklung von inkrementeller Codierung
+                hin zur strukturellen Ausführung.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="evolution.html">Motorentwicklung</a> |
+            <a href="background.html">Background</a> |
+            <a href="contact.html">Kontakt</a> |
+            <a href="nda.html">NDA / Legal</a>
+        </div>
+        <p>© 2026 MySirt</p>
+    </div>
+</footer>
+
+    <script src="../assets/js/video-reveal.js"></script>
+</body>
+</html>

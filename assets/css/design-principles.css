@@ -1,0 +1,157 @@
+/* ============================================================
+   MySirt — Principi di Progetto Visivo
+   Questo file definisce disciplina e coerenza visiva.
+   Non è un sito marketing.
+   Non è una landing SaaS.
+   È un documento tecnico di posizionamento.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. Sistema Colori
+   ------------------------------------------------------------ */
+
+:root {
+    --ms-bg: #ffffff;                /* Bianco dominante */
+    --ms-text-primary: #111111;      /* Testo principale */
+    --ms-text-secondary: #666666;    /* Testo secondario */
+    --ms-accent: #2f3e46;            /* Accento freddo, uso molto limitato */
+    --ms-separator: #bbbbbb;         /* Linee strutturali sottili */
+}
+
+/* Lo sfondo deve rimanere bianco.
+   Non introdurre fondi colorati o sezioni scure. */
+body {
+    background-color: var(--ms-bg);
+    color: var(--ms-text-primary);
+}
+
+
+/* ------------------------------------------------------------
+   2. Filosofia Tipografica
+   ------------------------------------------------------------ */
+
+/* Utilizzare font di sistema.
+   No font decorativi.
+   No caratteri “startup”. */
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* I titoli devono risultare strutturali, non promozionali. */
+h1, h2, h3 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+}
+
+/* Il grassetto è funzionale, non decorativo. */
+strong {
+    font-weight: 600;
+}
+
+
+/* ------------------------------------------------------------
+   3. Filosofia di Layout
+   ------------------------------------------------------------ */
+
+/* Lo spazio bianco è elemento strutturale.
+   Non deve essere compresso per "riempire". */
+
+
+/* Larghezza contenuto controllata.
+   Evitare testi full-width. */
+.container,
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* ------------------------------------------------------------
+   4. Disciplina Visiva
+   ------------------------------------------------------------ */
+
+/* Nessuna ombra. */
+* {
+    box-shadow: none !important;
+}
+
+/* Nessun gradiente. */
+* {
+    background-image: none !important;
+}
+
+/* Nessuna estetica “card arrotondate”. */
+.card,
+.box,
+.panel {
+    border-radius: 0 !important;
+}
+
+/* Link sobri, non aggressivi. */
+a {
+    color: var(--ms-text-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Il colore accento può essere usato solo per:
+   - micro evidenziazioni
+   - separatori sottili
+   - elementi funzionali minimi
+   Non deve essere usato per grandi blocchi visivi. */
+
+
+/* ------------------------------------------------------------
+   5. SVG e Diagrammi
+   ------------------------------------------------------------ */
+
+/* Tutti i diagrammi devono essere:
+   - monocromatici
+   - linee sottili
+   - nessun riempimento decorativo
+   - centrati
+   - coerenti con il colore del testo */
+svg {
+    display: block;
+    margin: 0 auto;
+    color: var(--ms-text-primary);
+}
+
+/* Spessore linee controllato */
+svg line,
+svg path {
+    stroke-width: 1.2;
+}
+
+
+/* ------------------------------------------------------------
+   6. Politica sulle Animazioni
+   ------------------------------------------------------------ */
+
+/* Nessuna animazione decorativa.
+   Eventuali transizioni solo se funzionali. */
+* {
+    transition: none !important;
+}
+
+
+/* ------------------------------------------------------------
+   7. Questo Sito NON È
+   ------------------------------------------------------------ */
+
+/*
+- Non è una landing page SaaS
+- Non è un pitch startup
+- Non è una vetrina UI
+- Non è un funnel commerciale
+
+È un documento tecnico di posizionamento
+per una tecnologia trasferibile.
+
+Il design deve comunicare:
+controllo, profondità, rigore, trasferibilità.
+*/

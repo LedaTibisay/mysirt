@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — MySirt</title>
+ 	<link rel="stylesheet" href="../assets/css/design-principles.css">    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="canonical" href="https://www.mysirt.com/en/contact.html">
+    <meta name="description" content="MySirt is a domain-agnostic Execution Engine that uses DSL definitions to derive Executable Information Systems.">
+    <meta name="keywords" content="MySirt,Model Execution Engine,Execution Engine,DSL,Executable Information System,declarative model,runtime environment,model driven engineering">
+    <meta name="author" content="MySirt">
+    <meta property="og:title" content="MySirt – Contact">
+    <meta property="og:description" content="A domain-agnostic meta-model that generates complete operational systems from formal domain definitions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mysirt.com/en/contact.html">
+    <meta property="og:image" content="https://www.mysirt.com/assets/images/mysirt-preview.png">
+    <meta name="robots" content="index, follow">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJ7QZ4X3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FFJ7QZ4X3E');
+    </script>
+<link rel="alternate" hreflang="en" href="https://mysirt.com/en/contact.html">
+<link rel="alternate" hreflang="it" href="https://mysirt.com/it/contact.html">
+<link rel="alternate" hreflang="es" href="https://mysirt.com/es/contact.html">
+<link rel="alternate" hreflang="de" href="https://mysirt.com/de/contact.html">
+<link rel="alternate" hreflang="x-default" href="https://mysirt.com/en/contact.html">
+</head>
+<body>
+
+<header>
+    <div class="container  header-inner">
+        <div class="logo">
+            <a href="index.html"> <img src="../Mysirt_LoghoBlack.png" alt="MySirt"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="what-is.html">What MySirt Is</a></li>
+                <li><a href="execution-model.html">Execution Model</a></li>
+                <li><a href="architecture.html">Architecture</a></li>
+                <li><a href="specifications.html">Specifications</a></li>
+                <li><a href="operational-evidence.html">Operational Evidence</a></li>
+                <li><a href="integration-transfer.html">Integration & Transfer</a></li>
+                <li><a href="evaluation-access.html">Evaluation Access</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher"><span>EN</span> | <a href="../it/contact.html">IT</a> | <a href="../es/contact.html">ES</a> | <a href="../de/contact.html">DE</a></div>
+    </div>
+</header>
+<main>
+
+  <!-- PAGE TITLE -->
+  <section class="page-intro">
+    <div class="container">
+      <h1>Contact</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="container">
+      <p>
+        For structured technical discussions, integration evaluation,
+        or acquisition-oriented inquiries, please use the channels below.
+      </p>
+      <p>
+        Communications are prioritized for engineering, architectural,
+        and strategic assessment purposes.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIRECT CONTACT -->
+  <section class="contact-details">
+    <div class="container">
+      <h2>Direct Contact</h2>
+      <p>
+        Email: <a href="mailto:info@mysirt.com">info@mysirt.com</a>
+      </p>
+      <p>
+        Please include your organizational context and evaluation objective
+        to facilitate efficient review.
+      </p>
+    </div>
+  </section>
+
+ <!-- CONTACT FORM -->
+<section class="contact-form">
+  <div class="container">
+    <h2>Structured Inquiry</h2>
+
+  <form id="mysirtContact"
+      action="https://formspree.io/f/xreanzkp"
+      method="POST">
+      
+  <input type="hidden" name="request_type" value="General Enquiry">
+  <input type="hidden" name="_subject" value="MySirt – General Enquiry">
+
+  <label>Name</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>Organization</label><br>
+  <input type="text" name="organization"><br><br>
+
+  <label>Role</label><br>
+  <input type="text" name="role"><br><br>
+
+  <label>Email</label><br>
+  <input type="email" name="email" required><br><br>
+
+  <label>Purpose of Contact</label><br>
+  <textarea name="message" rows="5" required></textarea><br><br>
+
+  <!-- Honeypot anti-spam -->
+  <div style="display:none;">
+    <label>Leave this empty</label>
+    <input type="text" name="website" autocomplete="off">
+  </div>
+
+  <button type="submit">Submit Inquiry</button>
+</form>
+</div>
+<script>
+  (function () {
+    const form = document.getElementById('mysirtContact');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn ? btn.textContent : null;
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          window.location.href = 'thank-you.html';
+          return;
+        }
+
+        // If Formspree returns an error, show something minimal
+        let msg = 'Submission failed. Please try again.';
+        try {
+          const data = await res.json();
+          if (data && data.errors && data.errors.length) msg = data.errors[0].message || msg;
+        } catch (_) {}
+
+        alert(msg);
+      } catch (err) {
+        alert('Network error. Please try again.');
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = originalText; }
+      }
+    });
+  })();
+</script>
+</section>
+  <!-- CONFIDENTIALITY -->
+  <section class="nda-note">
+    <div class="container">
+      <h2>Confidential Materials</h2>
+      <p>
+        Detailed architectural documentation, DSL specifications,
+        and advanced technical materials may be shared under
+        a mutual non-disclosure agreement (NDA).
+      </p>
+      <p>
+        Please specify in your message if confidential review
+        or formal evaluation procedures are required.
+      </p>
+    </div>
+  </section>
+
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="evolution.html">Engine Evolution</a> |
+            <a href="background.html">Background</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="nda.html">NDA / Legal</a>
+        </div>
+        <p>© 2026 MySirt</p>
+    </div>
+</footer>
+
+</body>
+</html>

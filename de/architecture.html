@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architektur — MySirt</title>
+ 	  <link rel="stylesheet" href="../assets/css/design-principles.css">    
+ 	  <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="canonical" href="https://www.mysirt.com/de/architecture.html">
+    <meta name="description" content="MySirt ist eine domänenunabhängige Execution Engine, die aus DSL-Definitionen Executable Information Systems ableitet.">
+    <meta name="keywords" content="MySirt,Model Execution Engine,Execution Engine,DSL,Executable Information System,declarative model,runtime environment,model driven engineering">
+    <meta name="author" content="MySirt">
+    <meta property="og:title" content="MySirt – Architecture">
+    <meta property="og:description" content="A domain-agnostic meta-model that generates complete operational systems from formal domain definitions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mysirt.com/de/architecture.html">
+    <meta property="og:image" content="https://www.mysirt.com/assets/images/mysirt-preview.png">
+    <meta name="robots" content="index, follow">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJ7QZ4X3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FFJ7QZ4X3E');
+    </script>
+<link rel="alternate" hreflang="en" href="https://mysirt.com/en/architecture.html">
+<link rel="alternate" hreflang="it" href="https://mysirt.com/it/architecture.html">
+<link rel="alternate" hreflang="es" href="https://mysirt.com/es/architecture.html">
+<link rel="alternate" hreflang="de" href="https://mysirt.com/de/architecture.html">
+<link rel="alternate" hreflang="x-default" href="https://mysirt.com/en/architecture.html">
+</head>
+<body>
+
+<header>
+    <div class="container  header-inner">
+        <div class="logo">
+            <a href="index.html"> <img src="../Mysirt_LoghoBlack.png" alt="MySirt"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="what-is.html">Was MySirt ist</a></li>
+                <li><a href="execution-model.html">Ausführungsmodell</a></li>
+                <li><a href="architecture.html">Architektur</a></li>
+                <li><a href="specifications.html">Spezifikationen</a></li>
+                <li><a href="operational-evidence.html">Operative Nachweise</a></li>
+                <li><a href="integration-transfer.html">Integration & Transfer</a></li>
+                <li><a href="evaluation-access.html">Evaluierungszugriff</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher"><a href="../en/architecture.html">EN</a> | <a href="../it/architecture.html">IT</a> | <a href="../es/architecture.html">ES</a> | <span>DE</span></div>
+    </div>
+</header>
+
+<!-- 17/02/2026 CONTENUTI AGGIORNATI - 
+
+Sì — contenutisticamente la Deep Dive è finita.
+
+Da qui in avanti ogni modifica rischia di peggiorarla, non migliorarla.
+
+Hai raggiunto il punto giusto:
+
+spiega cosa fa
+
+spiega come funziona
+
+spiega perché è affidabile
+
+spiega perché è trasferibile
+
+anticipa le obiezioni tecniche
+
+non entra in dettagli inutili
+
+Questa è esattamente la densità corretta per un acquirente tecnico.
+Se aggiungi altro → diventa documentazione interna.
+Se togli → torna marketing.
+
+Was bleibt auf dieser Seite technisch tats?chlich ?brig?
+
+Non grafica “bella”.
+Grafica leggibile industriale.
+
+La Deep Dive deve sembrare:
+
+specifica tecnica pubblica
+non brochure
+non blog post
+non manuale
+
+Il lavoro CSS qui serve solo a tre cose:
+
+1) Gerarchia visiva
+
+Il lettore deve scansionare in 20 secondi:
+
+Architecture
+DSL
+Regeneration
+Stability
+Knowledge
+Transferability
+
+Se non riesce → perde valore.
+
+2) Separazione dei blocchi mentali
+
+Ogni sezione è un concetto autonomo.
+Lo spazio bianco qui non è estetica — è comprensione.
+
+3) Credibilità tecnica
+
+Una pagina tecnica disordinata comunica:
+
+progetto personale
+
+Una pagina tecnica pulita comunica:
+
+tecnologia mantenibile
+
+In breve
+
+👉 Testi: chiusi
+👉 Struttura: chiusa
+👉 CSS: da fare
+👉 Contenuti: non toccare più
+
+ -->
+
+<main>
+
+  <!-- PAGE TITLE -->
+  <section class="page-intro">
+    <div class="container">
+      <h1>Architektur</h1>
+    </div>
+  </section>
+
+  <!-- INTRO (rigorous, paper-like) -->
+  <section class="intro">
+    <div class="container">
+    <p>
+      MySirt ist eine model-centric Execution Engine, basierend auf einem execution meta-model. Operative Systeme werden aus formalen Definitionen abgeleitet
+      und bleiben über die Zeit strukturell an diese Definitionen gebunden. Die Architektur ist so aufgebaut,
+      dass das Verhalten deterministisch, überprüfbar und regenerierbar bleibt und eine schrittweise Feature-Implementierung vermieden wird.
+    </p>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURAL STACK -->
+  <section class="architecture-diagram">
+    <div class="container">
+      <h2>Architekturstruktur</h2>
+      <p>
+        Die Engine ist in stabile Schichten unterteilt. Jede Schicht hat eine eindeutige Verantwortung und zeigt
+        deterministisches Verhalten: äquivalente Modelle erzeugen äquivalente strukturelle Ergebnisse.
+      </p>
+
+      <svg
+        class="arch-stack"
+        viewBox="0 0 900 520"
+        width="100%"
+        height="auto"
+        role="img"
+        aria-label="MySirt architectural stack diagram"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <style>
+          .s-line { stroke: #111; stroke-width: 1; fill: none; }
+          .s-text { fill: #111; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif; }
+          .t-h { font-size: 18px; font-weight: 600; }
+          .t-b { font-size: 14px; font-weight: 400; }
+          .t-s { font-size: 12px; font-weight: 400; }
+        </style>
+
+        <!-- outer frame -->
+        <rect x="120" y="60" width="660" height="400" class="s-line" />
+
+        <!-- horizontal separators (stack layers) -->
+        <line x1="120" y1="140" x2="780" y2="140" class="s-line" />
+        <line x1="120" y1="220" x2="780" y2="220" class="s-line" />
+        <line x1="120" y1="300" x2="780" y2="300" class="s-line" />
+        <line x1="120" y1="380" x2="780" y2="380" class="s-line" />
+
+        <!-- Layer 1 -->
+        <text x="450" y="108" class="s-text t-h" text-anchor="middle">DSL (Formale Spezifikation)</text>
+        <text x="450" y="130" class="s-text t-b" text-anchor="middle">Entitäten · Rollen · Regeln · Workflows · Verantwortlichkeiten</text>
+
+        <!-- Layer 2 -->
+        <text x="450" y="188" class="s-text t-h" text-anchor="middle">Model Interpreter</text>
+        <text x="450" y="210" class="s-text t-b" text-anchor="middle">Analysiert Definitionen · löst Abhängigkeiten · validiert Struktur</text>
+
+        <!-- Layer 3 -->
+        <text x="450" y="268" class="s-text t-h" text-anchor="middle">System Derivation Layer</text>
+        <text x="450" y="290" class="s-text t-b" text-anchor="middle">Leitet ausführbare Strukturen aus dem Modell ab</text>
+
+        <!-- Layer 4 -->
+        <text x="450" y="348" class="s-text t-h" text-anchor="middle">Rule Execution</text>
+        <text x="450" y="370" class="s-text t-b" text-anchor="middle">Setzt Entscheidungen · Validierungen · Verantwortlichkeiten durch</text>
+
+        <!-- Layer 5 -->
+        <text x="450" y="428" class="s-text t-h" text-anchor="middle">Operative Laufzeitumgebung</text>
+        <text x="450" y="450" class="s-text t-b" text-anchor="middle">Datenstrukturen · UI-Ansichten · Workflows · Sicherheitsverhalten</text>
+
+        <!-- footnote -->
+        <text x="450" y="495" class="s-text t-s" text-anchor="middle">
+          Deterministische Struktur: äquivalente Modelle erzeugen äquivalentes operatives Verhalten.
+        </text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- DSL - klargestellt am 05/07/2026 -->
+  <section class="dsl">
+    <div class="container">
+      <h2>DSL als ausführbare Spezifikation</h2>
+      <p>
+        MySirt verwendet eine deklarative, textbasierte DSL zur Definition von Systemstruktur, operativem Verhalten und organisatorischen Regeln.
+        Die DSL ist kein Dokumentationsartefakt: sie ist die maßgebliche Spezifikation, die von der Engine interpretiert wird.
+        Strukturelle Validität und Verhaltensregeln werden gegen die Modelldefinition geprüft, nicht gegen manuell implementierte Funktionen.
+      </p>
+
+      <div class="evidence-block">
+        <h3>Vollständige MySirt DSL-Spezifikation</h3>
+        <p>
+          Die vollständige MySirt DSL wird zum Schutz des geistigen Eigentums bewusst nicht öffentlich offengelegt.
+        </p>
+        <p>
+          Die öffentliche Dokumentation erläutert die architektonischen Prinzipien, das Ausführungsmodell und die konzeptionellen Grundlagen der Sprache, ohne ihre vollständige Syntax oder repräsentative Auszüge offenzulegen.
+        </p>
+        <p>
+          Detaillierte Sprachspezifikationen sind nur im Rahmen des Technologie-Evaluierungsprozesses und, sofern angemessen, unter Vertraulichkeitsbedingungen verfügbar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUCTURAL REGENERATION -->
+  <section class="regeneration">
+    <div class="container">
+      <h2>Strukturelle Regeneration</h2>
+      <p>
+        Änderungen am Modell lösen eine kohärente Regeneration abhängiger Strukturen aus. Das System bleibt durch Design mit der Definition
+        ausgerichtet: Änderungen auf Modellebene werden deterministisch auf die generierten Strukturen übertragen
+        und sichern strukturelle und verhaltensbezogene Konsistenz über die Zeit.
+      </p>
+      <p>
+        Der Regenerationsprozess ist strukturell und nicht kosmetisch: er bewahrt die Integrität des Modellvertrags
+        und verhindert unbeabsichtigte Abweichungen zwischen unabhängigen Komponenten.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXTENSION POINTS -->
+  <section class="custom-code">
+    <div class="container">
+      <h2>Erweiterungspunkte (Integration von Custom Code)</h2>
+      <p>
+        Individuelles Verhalten kann an definierten Erweiterungspunkten integriert werden, ohne die Regeneration zu beeinträchtigen.
+        Generierte und manuelle Komponenten können innerhalb klarer Grenzen koexistieren: das Modell bleibt die maßgebliche Quelle
+        für die Struktur, während externer Code auf definierte Integrationspunkte beschränkt ist.
+      </p>
+      <p>
+        Diese Trennung unterstützt die langfristige Wartbarkeit: regenerierte Strukturen bleiben konsistent und externe Integrationen
+        bleiben nachvollziehbar und austauschbar.
+      </p>
+    </div>
+  </section>
+
+  <!-- TRACEABILITY LAYER -->
+  <section class="traceability">
+    <div class="container">
+      <h2>Traceability Layer</h2>
+
+      <p>
+  MySirt bietet integrierte Nachvollziehbarkeit auf Ebene der Execution Engine. Generierte Systeme können
+  Mechanismen zur Überwachung von Datenänderungen und Systemzugriffen enthalten, abhängig
+  von der Modellkonfiguration. Die Nachvollziehbarkeit wird nicht auf Anwendungsebene implementiert,
+  sondern automatisch aus der Execution Engine abgeleitet.
+      </p>
+
+      <p>
+        Zwei komplementäre Komponenten stellen diese Funktion bereit:
+      </p>
+
+      <ul>
+      <li>
+        <strong>Audit Trail</strong> — zeichnet Änderungen an Entitätsdaten auf
+        (INSERT, UPDATE, DELETE) zusammen mit dem verantwortlichen Benutzer und dem exakten Zeitstempel,
+        wobei sowohl das Änderungsdelta als auch der vollständige Snapshot gespeichert werden.
+      </li>
+        <li>
+          <strong>Access Log</strong> — zeichnet Authentifizierungsereignisse wie
+          LOGIN_SUCCESS, LOGIN_FAILED und LOGOUT zusammen mit der Ursprungs-IP-Adresse auf.
+        </li>
+      </ul>
+
+      <p>
+        Die Audit-Engine speichert sowohl das Änderungsdelta als auch den vollständigen Snapshot des Datensatzes,
+        wodurch der Systemzustand zu jedem Zeitpunkt vollständig rekonstruiert werden kann.
+      </p>
+      <p>
+        Das Auditverhalten ist auf Modellebene konfigurierbar. Die Systemdefinition kann Audit global aktivieren,
+        während einzelne Entitäten unterschiedliche Strategien je nach Bedarf anwenden können.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Basic auditing</strong> — registriert, dass eine Änderung erfolgt ist, ohne Felddetails zu speichern.
+        </li>
+        <li>
+          <strong>Delta auditing</strong> — speichert die geänderten Felder mit alten und neuen Werten.
+        </li>
+        <li>
+          <strong>No auditing</strong> — Entitäten ohne Traceability-Anforderung können ausgeschlossen werden.
+        </li>
+      </ul>
+
+      <p>
+        Diese Konfiguration erlaubt es, Traceability, Speicheraufwand und Performance gezielt auszubalancieren.
+      </p>
+
+      <!-- SCREENSHOTS -->
+
+      <div class="case-image">
+        <img src="../assets/images/audit-trail-list.png"
+             alt="Audit Trail event list showing entity operations"
+             loading="lazy"
+             onclick="openLightbox(this.src)">
+        <p class="case-caption">
+            Audit Trail – Ereignisliste: Durchsuchbare Ansicht der aufgezeichneten Entitätsereignisse.
+        </p>
+      </div>
+
+      <div class="case-image">
+        <img src="../assets/images/audit-trail-detail.png"
+             alt="Audit Trail event detail showing delta and snapshot"
+             loading="lazy"
+             onclick="openLightbox(this.src)">
+        <p class="case-caption">
+            Audit Trail – Ereignisdetail: Metadaten und Snapshot der betroffenen Entität.
+        </p>
+      </div>
+
+      <div class="case-image">
+        <img src="../assets/images/access-log-list.png"
+             alt="Access log showing login success, login failed and logout events"
+             loading="lazy"
+             onclick="openLightbox(this.src)">
+        <p class="case-caption">
+            Access Log – Authentifizierungsereignisse: Zugriff wird unabhängig von Datenänderungen verfolgt.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CURRENT ENGINEERING BOUNDARIES -->
+  <section class="limitations">
+    <div class="container">
+      <h2>Aktuelle technische Grenzen</h2>
+      <ul>
+        <li>
+          Frontend-Schicht auf älterem Framework, austauschbar ohne Einfluss auf die Execution Engine.
+        </li>
+        <li>
+          Proprietäre Datenbankzugriffsbibliothek (dokumentiert), austauschbar an der Integrationsschnittstelle.
+        </li>
+        <li>
+          Laufende Verbesserungen zur Formalisierung des Modellvertrags.
+        </li>
+      </ul>
+      <p>
+  Diese Einschränkungen verändern nicht das Ausführungsmodell: die Architektur bleibt auf dem execution meta-model basiert und deterministisch.
+</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="evolution.html">Motorentwicklung</a> |
+            <a href="background.html">Background</a> |
+            <a href="contact.html">Kontakt</a> |
+            <a href="nda.html">NDA / Legal</a>
+        </div>
+        <p>© 2026 MySirt</p>
+    </div>
+</footer>
+
+<!-- LIGHTBOX CONTAINER -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+    <img id="lightbox-img" onclick="closeLightbox()">
+</div>
+<script>
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'flex';
+    lightbox.classList.add('is-open');
+    document.getElementById('lightbox-img').src = src;
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = 'auto';
+}
+</script>
+
+</body>
+</html>

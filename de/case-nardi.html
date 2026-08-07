@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managementsystem auf Industrieniveau — Case Study — MySirt</title>
+	<link rel="stylesheet" href="../assets/css/design-principles.css">    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="canonical" href="https://www.mysirt.com/de/case-nardi.html">
+    <meta name="description" content="MySirt ist eine domänenunabhängige Execution Engine, die aus DSL-Definitionen Executable Information Systems ableitet.">
+    <meta name="keywords" content="MySirt,Model Execution Engine,Execution Engine,DSL,Executable Information System,declarative model,runtime environment,model driven engineering">
+    <meta name="author" content="MySirt">
+    <meta property="og:title" content="MySirt – Industrial-Grade Management System">
+    <meta property="og:description" content="A domain-agnostic meta-model that generates complete operational systems from formal domain definitions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mysirt.com/de/case-nardi.html">
+    <meta property="og:image" content="https://www.mysirt.com/assets/images/mysirt-preview.png">
+    <meta name="robots" content="index, follow">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJ7QZ4X3E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FFJ7QZ4X3E');
+    </script>
+<link rel="alternate" hreflang="en" href="https://mysirt.com/en/case-nardi.html">
+<link rel="alternate" hreflang="it" href="https://mysirt.com/it/case-nardi.html">
+<link rel="alternate" hreflang="es" href="https://mysirt.com/es/case-nardi.html">
+<link rel="alternate" hreflang="de" href="https://mysirt.com/de/case-nardi.html">
+<link rel="alternate" hreflang="x-default" href="https://mysirt.com/en/case-nardi.html">
+</head>
+<body>
+
+<header>
+    <div class="container  header-inner">
+        <div class="logo">
+            <a href="index.html"> <img src="../Mysirt_LoghoBlack.png" alt="MySirt"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="what-is.html">Was MySirt ist</a></li>
+                <li><a href="execution-model.html">Ausführungsmodell</a></li>
+                <li><a href="architecture.html">Architektur</a></li>
+                <li><a href="specifications.html">Spezifikationen</a></li>
+                <li><a href="operational-evidence.html">Operative Nachweise</a></li>
+                <li><a href="integration-transfer.html">Integration & Transfer</a></li>
+                <li><a href="evaluation-access.html">Evaluierungszugriff</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher"><a href="../en/case-nardi.html">EN</a> | <a href="../it/case-nardi.html">IT</a> | <a href="../es/case-nardi.html">ES</a> | <span>DE</span></div>
+    </div>
+</header>
+
+<main>
+
+    <!-- PAGE TITLE -->
+    <section class="page-intro">
+        <div class="container">
+            <h1>Industrie-taugliches Managementsystem — Validierung der Engine-Tiefe</h1>
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="context">
+        <div class="container">
+            <h2>Kontext</h2>
+            <p>
+                Dieser Fall stellt die stärkste Validierung des MySirt-Ausführungsmodells
+                auf Enterprise-Ebene in einem institutionellen operativen Umfeld dar.
+            </p>            
+            <p>
+                Institutionelles Managementsystem, abgeleitet aus einem formalen Domänenmodell,
+                definiert in der MySirt DSL als Instanz des Execution Meta-Models
+                und von der Execution Engine ausgeführt.
+                Derzeit in einer institutionellen Vorproduktionsumgebung im Einsatz,
+                nach einer einmonatigen strukturierten Schulungsphase.
+            </p>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT 1 -->
+    <section class="scope">
+        <div class="container">
+            <h2>Struktureller Umfang</h2>
+            <ul>
+                <li>Multi-Entitäten-Domänenmodell über operative Einheiten hinweg</li>
+                <li>Rollenbasierte Zugriffskontrolle mit Workflow-Orchestrierung</li>
+                <li>Geschäftsregeln direkt in der DSL verankert</li>
+                <li>Dokumentgenerierung und Reporting-Templates</li>
+                <li>Multi-Datenbank-Unterstützung (Oracle XE)</li>
+                <li>Java 17 / Tomcat 9 Ausführungsstack</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- STRUCTURAL FOOTPRINT -->
+<section class="structural-footprint">
+        <div class="container">
+    <h2>Struktureller Footprint</h2>
+            <p class="section-intro">
+      Größe des deklarativen Modells und strukturelle Zusammensetzung
+      des Managementsystems.
+            </p>
+            <div class="evidence-block">
+                <div class="metric-row">
+        <span>Effektive DSL-Zeilen</span>
+        <span>1,400</span>
+                </div>
+                <div class="metric-row">
+        <span>Gesamtanzahl Entitäten</span>
+        <span>41</span>
+                </div>
+                <div class="metric-row">
+        <span>Master-Entitäten</span>
+        <span>7</span>
+                </div>
+                <div class="metric-row">
+        <span>Detail-Entitäten</span>
+        <span>10</span>
+                </div>
+
+      <div class="metric-row">
+        <span>Enumerationen</span>
+        <span>19</span>
+            </div>
+
+      <div class="metric-row">
+        <span>Workflow-Entitäten</span>
+        <span>9</span>
+      </div>
+
+      <div class="metric-row">
+        <span>Zusammengesetzte Primärschlüssel</span>
+        <span>11+</span>
+      </div>
+
+      <div class="metric-row">
+        <span>Berechnete Felder</span>
+        <span>70+</span>
+      </div>
+
+      <div class="metric-row">
+        <span>Kontextabhängige Sequenzgeneratoren</span>
+        <span>9</span>
+      </div>
+
+    </div>
+
+    <p class="technical-note">
+      Die strukturelle Komplexität wird deklarativ im Modell definiert
+      und in ausführbare Runtime-Artefakte übersetzt.
+            </p>
+        </div>
+    </section>
+
+<section class="generative-evidence">
+        <div class="container">
+    <h2>Generative Evidenz</h2>
+
+    <p class="section-intro">
+      Gemessener Runtime-Footprint basierend auf dem deklarativen Modell.
+    </p>
+
+<!-- RUNTIME FOOTPRINT -->
+            <div class="evidence-block">
+                <div class="metric-row">
+    <span>Gesamter Runtime-Code</span>
+    <span>~122,000</span>
+                </div>
+                <div class="metric-row">
+    <span>Generierte Java-Klassen</span>
+    <span>358</span>
+                </div>
+                <div class="metric-row">
+    <span>DSL → Code-Verhältnis</span>
+    <span>~1:82</span>
+                </div>
+
+</div>
+
+<!-- DATABASE FOOTPRINT -->
+<div class="evidence-block">
+
+                <div class="metric-row">
+    <span>Generierte Tabellen</span>
+    <span>51</span>
+                </div>
+
+  <div class="metric-row">
+    <span>Primärschlüssel</span>
+    <span>49</span>
+            </div>
+
+  <div class="metric-row">
+    <span>Indizes</span>
+    <span>56</span>
+        </div>
+
+  <div class="metric-row">
+    <span>Referenzielle Integrität</span>
+    <span>Engine-gesteuert</span>
+  </div>
+
+</div>
+
+<!-- GENERATION RATIO -->
+<div class="evidence-block highlight">
+
+  <h3 class="evidence-subtitle">Runtime-Generierungsverhältnis</h3>
+
+  <div class="metric-row">
+    <span>Generierter Code</span>
+    <span>über 90%</span>
+  </div>
+
+  <div class="metric-row">
+    <span>Manueller Code</span>
+    <span>~8,800</span>
+  </div>
+
+</div>
+
+<p class="evidence-note">
+  Anpassungen beschränken sich auf Umgebungs-Konfiguration,
+  Branding-Anpassung und gezielte UI-Erweiterungen.
+  Die zentrale Geschäftslogik und strukturelle Workflows bleiben model-driven.
+</p>
+
+<p class="technical-access">
+  Detaillierte DSL-Auszüge und Regenerations-Traceability
+  sind auf formale technische Anfrage verfügbar.
+</p>
+</div>
+</section>
+<section class="productivity-impact">
+  <div class="container">
+
+    <h2>Produktivitätswirkung</h2>
+
+    <p class="section-intro">
+      Beobachtete Verstärkung der Entwicklungsproduktivität durch die Ausführung des Meta-Modells.
+    </p>
+
+    <div class="evidence-block highlight">
+
+      <div class="metric-row">
+        <span>Generierter Code</span>
+        <span>~114,000 LOC</span>
+      </div>
+
+      <div class="metric-row">
+        <span>Manueller Code</span>
+        <span>~8,800 LOC</span>
+      </div>
+
+      <div class="metric-row">
+        <span>Verhältnis generiert/manuell</span>
+        <span>~13:1</span>
+      </div>
+
+    </div>
+
+    <p class="evidence-note">
+      Jede Einheit manueller Entwicklung erzeugt ein deutlich größeres ausführbares System,
+      wobei sich der menschliche Aufwand auf domänenspezifische Logik konzentriert und die restliche Struktur vom System abgeleitet wird.
+    </p>
+
+  </div>
+</section>
+    <!-- SCREENSHOT 1 -->
+    <section class="case-section-light">
+        <div class="container">
+            <div class="case-image">
+                <img src="../assets/images/nardi-complaints.png"
+                    onclick="openLightbox(this.src)">
+            </div>
+            <p class="case-caption">
+                Strukturierte Suchansicht von Entitäten, generiert aus dem in DSL definierten Domänenmodell.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURAL SIGNIFICANCE -->
+    <section class="operational-evidence">
+        <div class="container">
+            <h2>Operative Validierung</h2>
+            <ul>
+                <li>Einmonatige institutionelle Schulung abgeschlossen</li>
+                <li>~20 aktive Teilnehmer während der Validierungsphase</li>
+                <li>Multi-Labor Organisationsstruktur</li>
+                <li>Tägliche operative Nutzung nach Produktionsfreigabe vorgesehen</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- KEY POINT -->
+    <section class="engine-stress">
+        <div class="container">
+            <h2>Engine-Stresstest</h2>
+            <p>
+                Das System wurde während der Schulung iterativ strukturell verfeinert,
+                wodurch Domänenanpassungen ohne manuelle Codeänderungen möglich waren.
+                Workflow-Komplexität und Rollen-Orchestrierung wurden
+                vor der Produktionsfreigabe validiert.
+            </p>
+        </div>
+    </section>
+
+    <!-- MODEL EXCERPT -->
+    <section class="case-section-alt">
+        <div class="container">
+            <div class="case-image">
+                <img src="../assets/images/nardi-workflow.png"
+                    onclick="openLightbox(this.src)">
+            </div>
+            <p class="case-caption">
+                Abteilungsbasierter Workflow mit nachvollziehbaren Verantwortungsübergängen.
+        </p>
+
+        </div>
+    </section>
+
+    <section class="engine-dimension">
+  <div class="container">
+            <h2>Dimension der Engine-Validierung</h2>
+            <p>
+                Demonstriert strukturelle Skalierbarkeit, Workflow-Tiefe
+                und institutionelles Domänenmodell vor dem Produktivbetrieb.
+            </p>
+    </div>
+    </section>
+
+    <!-- SCREENSHOT 3 -->
+    <section class="case-section-light">
+        <div class="container">
+            <div class="case-image">
+                <img src="../assets/images/nardi-roles.png"
+                    onclick="openLightbox(this.src)">
+            </div>
+            <p class="case-caption">
+                Berechtigungsmatrix auf Entitätsebene, generiert aus DSL-definierten Zugriffsregeln.
+            </p>
+        </div>
+    </section>  
+
+    <!-- KEY POINT -->
+    <section class="key-point">
+        <div class="container">
+            <h2>Kernaussage</h2>
+            <p>
+                Ein Enterprise-System, abgeleitet aus einer kompakten formalen Definition —
+                iterativ verfeinert ohne Neuschreiben von Anwendungscode.
+            </p>
+  </div>
+</section>
+
+<section class="case-navigation">
+  <div class="container">
+
+    <div class="case-nav">
+
+      <a class="case-next" href="case-volleyball.html">
+        N&auml;chster Fall &rarr;
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="evolution.html">Motorentwicklung</a> |
+            <a href="background.html">Background</a> |
+            <a href="contact.html">Kontakt</a> |
+            <a href="nda.html">NDA / Legal</a>
+        </div>
+        <p>© 2026 MySirt</p>
+    </div>
+</footer>
+
+<!-- LIGHTBOX CONTAINER -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+    <img id="lightbox-img" onclick="closeLightbox()">
+</div>
+<script>
+function openLightbox(src) {
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    img.src = src;
+    lb.classList.add("is-open");
+}
+
+function closeLightbox() {
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    lb.classList.remove("is-open");
+    img.removeAttribute("src");
+}
+</script>
+
+</body>
+</html>

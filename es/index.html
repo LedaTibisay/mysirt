@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySirt — Execution Engine para sistemas de información</title>
+	<link rel="stylesheet" href="../assets/css/design-principles.css">    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="canonical" href="https://www.mysirt.com/es/index.html">
+<meta name="description" content="MySirt es una Execution Engine independiente del dominio que usa definiciones DSL para derivar Executable Information Systems.">
+<meta name="keywords" content="MySirt,Model Execution Engine,Execution Engine,DSL,Executable Information System,declarative model,runtime environment,model driven engineering">
+<meta name="author" content="MySirt">
+<meta property="og:title" content="MySirt – Execution Engine">
+<meta property="og:description" content="A domain-agnostic meta-model that generates complete operational systems from formal domain definitions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mysirt.com/es/index.html">
+<meta property="og:image" content="https://www.mysirt.com/assets/images/mysirt-preview.png">
+    <meta name="robots" content="index, follow">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJ7QZ4X3E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FFJ7QZ4X3E');
+</script>
+<link rel="alternate" hreflang="en" href="https://mysirt.com/en/index.html">
+<link rel="alternate" hreflang="it" href="https://mysirt.com/it/index.html">
+<link rel="alternate" hreflang="es" href="https://mysirt.com/es/index.html">
+<link rel="alternate" hreflang="de" href="https://mysirt.com/de/index.html">
+<link rel="alternate" hreflang="x-default" href="https://mysirt.com/en/index.html">
+</head>
+<body>
+<!-- 19/02/2026 CONTENUTI TERMINATI -->
+<header>
+    <div class="container  header-inner">
+        <div class="logo">
+            <a href="index.html"> <img src="../Mysirt_LoghoBlack.png" alt="MySirt"></a>
+        </div>
+       
+        <nav>
+            <ul>
+                <li><a href="what-is.html">Qué es MySirt</a></li>
+                <li><a href="execution-model.html">Modelo de ejecución</a></li>
+                <li><a href="architecture.html">Arquitectura</a></li>
+                <li><a href="specifications.html">Especificaciones</a></li>
+                <li><a href="operational-evidence.html">evidencia operativa</a></li>
+                <li><a href="integration-transfer.html">Integración y Transferencia</a></li>
+                <li><a href="evaluation-access.html">Evaluación</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher"><a href="../en/index.html">EN</a> | <a href="../it/index.html">IT</a> | <span>ES</span> | <a href="../de/index.html">DE</a></div>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container">
+        <h1>Hacer ejecutable el conocimiento estructurado.</h1>
+        <p class="hero-statement">
+            Un Execution Engine domain-agnostic en el que los sistemas se derivan de modelos formales,
+            no se implementan en código.
+            <br>
+            Estructura, comportamiento y responsabilidades se definen en una única especificación ejecutable.
+        </p>       
+        <div class="cta">
+            <a href="execution-model.html">Modelo de ejecución</a>
+            <a href="operational-evidence.html">Evidencia operativa</a>
+        </div>
+    </div>
+</section>
+<div class="video-reveal video-reveal-home">
+    <button
+        type="button"
+        class="video-toggle"
+        aria-expanded="false"
+        aria-controls="short-video-panel"
+        data-video-label="Ver la introducción de 50 segundos"
+        data-video-hide-label="Ocultar vídeo">
+        Ver la introducción de 50 segundos
+    </button>
+    <div
+        id="short-video-panel"
+        class="video-panel"
+        hidden>
+        <video controls preload="none" playsinline>
+            <source src="../assets/video/MySirt_VideoShort.mp4" type="video/mp4">
+            Tu navegador no admite video HTML5.
+        </video>
+    </div>
+</div>
+<div class="chapter chapter-foundation">
+    <section class="anchor">
+        <div class="container">
+            <p>
+                Cada sistema de información presentado aquí se deriva de un modelo estructurado, no se implementa funcionalidad por funcionalidad.
+            </p>
+        </div>
+    </section>
+
+    <section class="flow-diagram">
+        <div class="container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 800 340"
+              width="100%"
+              height="auto"
+              role="img"
+              aria-label="Domain Definition to Operational System flow">
+
+              <title>Domain Definition → Execution Engine → Operational System</title>
+
+              <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <text x="400" y="95" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="22" fill="currentColor" stroke="none">
+                  Definición del dominio
+                </text>
+                <text x="400" y="170" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="22" fill="currentColor" stroke="none">
+                  Execution Engine
+                </text>
+                <text x="400" y="245" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="22" fill="currentColor" stroke="none">
+                  Sistema de información
+                </text>
+
+                <line x1="400" y1="112" x2="400" y2="148"/>
+                <path d="M 400 148 L 392 140 M 400 148 L 408 140"/>
+                <line x1="400" y1="187" x2="400" y2="223"/>
+                <path d="M 400 223 L 392 215 M 400 223 L 408 215"/>
+              </g>
+            </svg>
+            <div class="mobile-flow" aria-hidden="true">
+                <p>Definición del dominio</p>
+                <p>&darr;</p>
+                <p>Execution Engine</p>
+                <p>&darr;</p>
+                <p>Sistema de información</p>
+            </div>
+        </div>
+    </section>
+    <section class="architecture-statement">
+        <div class="container">
+
+            <h2>Principio arquitectónico</h2>
+
+            <p class="principle">
+                Los procedimientos no se implementan en el software.
+                El software ejecuta los procedimientos.
+            </p>
+
+            <p>
+                En MySirt, el comportamiento del sistema se deriva de la estructura formal
+                del modelo de dominio en lugar de funcionalidades implementadas manualmente.
+            </p>
+
+        </div>
+    </section>
+    <section class="proof">
+        <div class="container">
+            <h2>Métricas observadas en producción</h2>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-value">más del 90%</div>
+                <div class="metric-label">código generado <br>(aplicación de atención al cliente)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">~1:82</div>
+                <div class="metric-label">ratio DSL → código <br>(aplicación de atención al cliente)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">~13:1</div>
+                <div class="metric-label">ratio generado/manual <br>(aplicación de atención al cliente)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">5 years</div>
+                <div class="metric-label">uso operativo continuo <br>(aplicación de registro de eventos a nivel nacional)</div>
+              </div>
+            </div>
+            <br>
+            <p>Métricas derivadas de entornos operativos reales.</p>
+            <p>El modelo no es teórico. Ha sido ejecutado en entornos de producción.</p>
+        </div>
+    </section>
+</div>
+
+<div class="chapter chapter-model">
+    <section class="how-preview">
+        <div class="container">
+            <h2>Visión general del modelo de ejecución</h2>
+            <p>El ciclo de vida del sistema está gobernado por un ciclo de ejecución determinista:</p>
+            <ol>
+                <li>Definir el modelo de dominio</li>
+                <li>Ejecutar el Execution Engine</li>
+                <li>Obtener el sistema ejecutable</li>
+                <li>Modificar el modelo → regenerar</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="what-does">
+        <div class="container">
+            <h2>Qué define el modelo de ejecución</h2>
+            <ul>
+                <li>Estructuras de datos (entidades, relaciones, identificadores)</li>
+                <li>Comportamiento operativo (triggers, jobs, condiciones)</li>
+                <li>Responsabilidades organizativas (roles, reglas de acceso)</li>
+                <li>Restricciones de workflow y reglas de decisión</li>
+                <li>Estructuras de interacción con el usuario (listas, formularios, prompts)</li>
+            </ul>
+            <p>El modelo define no solo las estructuras de datos, sino también el comportamiento del sistema.</p>
+        </div>
+    </section>
+
+<section class="beyond">
+    <div class="container">
+        <h2>Ejecución model-driven</h2>
+
+        <p class="principle">
+            El comportamiento del sistema no se implementa — se deriva del modelo.
+        </p>
+
+        <p>
+            El modelo define la estructura, la lógica operativa y las responsabilidades.
+            El Execution Engine interpreta esta definición y la aplica en tiempo de ejecución.
+        </p>
+
+        <p>
+            El comportamiento de la aplicación está, por tanto, condicionado por la estructura del modelo
+            y no por implementaciones incrementales de funcionalidades.
+        </p>
+
+        <p>
+            El sistema en ejecución refleja su definición actual,
+            no la acumulación de cambios de código a lo largo del tiempo.
+        </p>
+<p class="technical-note">
+    La coherencia estructural se preserva mediante ejecución y regeneración model-driven.
+</p>        
+
+    </div>
+</section>
+</div>
+
+<div class="chapter chapter-evidence">
+    <section class="difference">
+        <div class="container">
+            <h2>Qué hace diferente a MySirt</h2>
+            <p>El dominio se describe, no se programa.
+               La DSL se convierte en la Single Source of Truth, mientras que el Model Execution Engine deriva automáticamente un sistema de información completo, coherente y regenerable.</p>
+        </div>
+    </section>
+
+    <section class="case-preview">
+        <div class="container">
+            <h2>Evidencia operativa</h2>
+            <p>Sistemas de información derivados de definiciones estructuradas de dominio.</p>
+            <a href="operational-evidence.html">Explorar evidencia operativa</a>
+        </div>
+    </section>
+
+    <section class="target">
+        <div class="container">
+            <h2>A quién está dirigido</h2>
+            <ul>
+                <li>Organizaciones que digitalizan procesos de negocio complejos basados en reglas</li>
+                <li>Equipos que gestionan variantes de procesos recurrentes entre múltiples clientes</li>
+                <li>Proveedores cuyo conocimiento de dominio debe convertirse en un sistema de información ejecutable</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="closing">
+        <div class="container">
+            <h2>Posicionamiento</h2>
+            <p>
+                MySirt no es una herramienta de desarrollo ni una plataforma low-code.
+                Es un Model Execution Engine que hace ejecutable el conocimiento de dominio mientras mantiene el sistema continuamente alineado con su definición formal.
+            </p>
+        </div>
+    </section>
+</div>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Próximos pasos</h2>
+			<p>
+			    Elige tu camino de exploración
+			</p>
+			<div class="cta">
+			    <a href="execution-model.html">Comprender el modelo de ejecución</a>
+			    <a href="operational-evidence.html">Ver evidencia operativa</a>
+			    <a href="integration-transfer.html">Evaluar el potencial de integración</a>
+			</div>
+            <div class="cta" style="margin-top: 14px;">
+                <a href="evolution.html">Descubra c&oacute;mo evoluciona el Motor de Ejecuci&oacute;n</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="evolution.html">Evolución del motor</a> |
+            <a href="background.html">Background</a> |
+            <a href="contact.html">Contacto</a> |
+            <a href="nda.html">Acuerdo de confidencialidad / Legal</a>
+        </div>
+        <p>© 2026 MySirt</p>
+    </div>
+</footer>
+
+    <script src="../assets/js/video-reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volley – Fallstudie — MySirt</title>
+	<link rel="stylesheet" href="../assets/css/design-principles.css">    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="canonical" href="https://www.mysirt.com/de/case-volleyball.html">
+    <meta name="description" content="MySirt ist eine domänenunabhängige Execution Engine, die aus DSL-Definitionen Executable Information Systems ableitet.">
+    <meta name="keywords" content="MySirt,Model Execution Engine,Execution Engine,DSL,Executable Information System,declarative model,runtime environment,model driven engineering">
+    <meta name="author" content="MySirt">
+    <meta property="og:title" content="MySirt – Volleyball Case Study">
+    <meta property="og:description" content="A domain-agnostic meta-model that generates complete operational systems from formal domain definitions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mysirt.com/de/case-volleyball.html">
+    <meta property="og:image" content="https://www.mysirt.com/assets/images/mysirt-preview.png">
+    <meta name="robots" content="index, follow">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJ7QZ4X3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FFJ7QZ4X3E');
+    </script>
+<link rel="alternate" hreflang="en" href="https://mysirt.com/en/case-volleyball.html">
+<link rel="alternate" hreflang="it" href="https://mysirt.com/it/case-volleyball.html">
+<link rel="alternate" hreflang="es" href="https://mysirt.com/es/case-volleyball.html">
+<link rel="alternate" hreflang="de" href="https://mysirt.com/de/case-volleyball.html">
+<link rel="alternate" hreflang="x-default" href="https://mysirt.com/en/case-volleyball.html">
+</head>
+<body>
+
+<header>
+    <div class="container  header-inner">
+        <div class="logo">
+            <a href="index.html"> <img src="../Mysirt_LoghoBlack.png" alt="MySirt"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="what-is.html">Was MySirt ist</a></li>
+                <li><a href="execution-model.html">Ausführungsmodell</a></li>
+                <li><a href="architecture.html">Architektur</a></li>
+                <li><a href="specifications.html">Spezifikationen</a></li>
+                <li><a href="operational-evidence.html">Operative Nachweise</a></li>
+                <li><a href="integration-transfer.html">Integration & Transfer</a></li>
+                <li><a href="evaluation-access.html">Evaluierungszugriff</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher"><a href="../en/case-volleyball.html">EN</a> | <a href="../it/case-volleyball.html">IT</a> | <a href="../es/case-volleyball.html">ES</a> | <span>DE</span></div>
+    </div>
+</header>
+
+<main>
+
+    <!-- PAGE TITLE -->
+    <section class="page-intro">
+    <div class="container">
+    <h1>Managementsystem für Volleyballverein — Progressive Generativität</h1>
+    </div>
+    </section>
+
+    <!-- CONTEXT -->
+    <section class="context">
+    <div class="container">
+
+    <h2>Kontext</h2>
+
+    <p>
+        Managementsystem für einen Volleyballverein zur Unterstützung administrativer Abläufe,
+        Athletenverwaltung und Finanzmanagement.
+
+        Das System wurde schrittweise von einem Sportverantwortlichen ohne vorherige Programmiererfahrung
+        entwickelt und gepflegt und zeigt, wie Fachexperten sich schrittweise zu Systemmodellierern
+        entwickeln können, indem sie die MySirt DSL verwenden.
+    </p>
+
+    <ul>
+    <li>Verwaltung von Athleten und Teams</li>
+    <li>Trainer und Personal</li>
+    <li>Nachverfolgung medizinischer Zertifikate</li>
+    <li>Erstellung von Steuerbelegen</li>
+    <li>Administrative Workflows</li>
+    </ul>
+
+    </div>
+    </section>
+
+    <section class="learning-curve">
+    <div class="container">
+
+    <h2>Lernentwicklung</h2>
+
+    <p>
+    Das System wurde zunächst mit visuellen Modellierungswerkzeugen konfiguriert.
+    Nach einer kurzen Einarbeitungsphase wechselte der Fachexperte schrittweise
+    zur direkten Bearbeitung der DSL und konnte schließlich das operative System eigenständig pflegen.
+    </p>
+
+    <div class="learning-steps">
+
+    <div class="learning-step">
+    <strong>Initialphase</strong>
+    <p>Visuelle Konfiguration mit MySirt-Formularen und Entitäts-Buildern.</p>
+    </div>
+
+    <div class="learning-step">
+    <strong>Zwischenphase</strong>
+    <p>Unterstützte DSL-Bearbeitung für Geschäftsregeln und strukturelle Anpassungen.</p>
+    </div>
+
+    <div class="learning-step">
+    <strong>Autonome Phase</strong>
+    <p>Eigenständige Pflege des Systems über die DSL.</p>
+    </div>
+
+    </div>
+
+    </div>
+    </section>
+
+    <!-- SCREENSHOT 1 -->
+    <section class="case-section-light">
+        <div class="container">
+            <div class="case-image">
+                <img src="../assets/images/volley-rendiconto-search.png" alt="Model generated search interface"
+                    onclick="openLightbox(this.src)">
+            </div>
+            <p class="case-caption">
+                Automatisch generierte Suchoberfläche basierend auf dem Domänenmodell mit domänenspezifischen Filterparametern.
+            </p>
+        </div>
+    </section>
+
+    <section class="structural-footprint">
+        <div class="container">
+
+        <h2>Struktureller Footprint</h2>
+
+        <p class="section-intro">
+        Struktureller Umfang des generierten Systems, definiert durch die MySirt DSL.
+        </p>
+
+        <div class="evidence-block">
+
+            <div class="metric-row">
+                <span>Effektive DSL-Zeilen</span>
+                <span>2,783</span>
+            </div>
+
+            <div class="metric-row">
+                <span>Gesamtanzahl Entitäten</span>
+                <span>29</span>
+            </div>
+
+            <div class="metric-row">
+                <span>Master-Entitäten</span>
+                <span>5</span>
+            </div>
+
+            <div class="metric-row">
+                <span>Detail-Entitäten</span>
+                <span>13</span>
+            </div>
+
+            <div class="metric-row">
+                <span>Formulare</span>
+                <span>7</span>
+            </div>
+
+            <div class="metric-row">
+                <span>Enumerationen</span>
+                <span>50</span>
+            </div>
+
+            <div class="metric-row">
+                <span>Entitätsübergreifende Referenzen</span>
+                <span>43</span>
+            </div>
+
+            <div class="metric-row">
+                <span>Berechnete Felder</span>
+                <span>250+</span>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <section class="generative-evidence">
+    <div class="container">
+
+    <h2>Generative Evidenz</h2>
+
+    <p class="section-intro">
+    Quantitativer Vergleich zwischen DSL-Definition
+    und generiertem Laufzeitsystem.
+    </p>
+
+    <div class="evidence-block">
+
+    <div class="metric-row">
+    <span>Effektive DSL-Zeilen</span>
+    <span>2,783</span>
+    </div>
+
+    <div class="metric-row">
+    <span>Generierter Runtime-Code (LOC)</span>
+    <span>64,834</span>
+    </div>
+
+    <div class="metric-row">
+    <span>Kompressionsverhältnis (DSL → Runtime)</span>
+    <span>≈ 1 : 23</span>
+    </div>
+
+    <div class="metric-row">
+    <span>Manueller Code</span>
+    <span>0 (100% generiert)</span>
+    </div>
+
+    </div>
+
+    <p class="evidence-note">
+    Das operative System wurde vollständig aus der DSL-Definition generiert,
+    die eine Instanz des Execution Meta-Models darstellt.
+    Der Fachexperte pflegte das System direkt über das Modell,
+    ohne den generierten Runtime-Code zu verändern.
+    </p>
+
+    <p class="technical-note">
+    Dies zeigt die schrittweise Transformation eines Fachexperten
+    von der Konfiguration zur vollständigen DSL-basierten Systemmodellierung.
+    </p>
+    </div>
+    </section>
+
+    <!-- SCREENSHOT 2 -->
+    <section class="case-section-light">
+        <div class="container">
+            <div class="case-image">
+                <img src="../assets/images/volley-rendiconto-list.png"
+                    alt="Operational financial dashboard"
+                    onclick="openLightbox(this.src)">
+            </div>
+            <p class="case-caption">
+                Operatives Dashboard mit finanziellen Bewegungen, generiert aus dem Domänenmodell,
+                einschließlich berechneter Salden und entitätsübergreifender Referenzen.
+            </p>
+        </div>
+    </section>
+
+    <!-- OPERATIONAL EVIDENCE -->
+    <section class="evidence">
+    <div class="container">
+
+    <h2>Operative Evidenz</h2>
+
+    <ul>
+    <li>Operativer Einsatz über mehr als zwei Jahre</li>
+    <li>Verwendung für reale administrative Verwaltung des Vereins</li>
+    <li>System vollständig über DSL-Definitionen generiert und gepflegt</li>
+    <li>Der Fachexperte entwickelte sich von Formular-Konfiguration zur direkten DSL-Bearbeitung</li>
+    </ul>
+
+    </div>
+    </section>
+
+    <!-- ENGINE EVOLUTION -->
+    <section class="evolution">
+    <div class="container">
+
+    <h2>Engine-Weiterentwicklung</h2>
+
+    <p>
+    Der operative Einsatz führte zu Verbesserungen im Drucksubsystem
+    sowie zu Weiterentwicklungen der Ausführungs-Engine basierend auf Domänenfeedback.
+    </p>
+
+    </div>
+    </section>
+
+    <!-- SCREENSHOT 3 -->
+    <section class="case-section-light">
+        <div class="container">
+            <div class="case-image">
+                <img src="../assets/images/volley-templates.png"
+                alt="Document template configuration"
+                    onclick="openLightbox(this.src)">
+            </div>
+            <p class="case-caption">
+                Mehrere Dokumentvorlagen können derselben Entität zugeordnet werden,
+                wodurch unterschiedliche generierte Ausgaben möglich sind.
+            </p>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURAL SIGNIFICANCE -->
+    <section class="significance">
+    <div class="container">
+
+    <h2>Architektonische Bedeutung</h2>
+
+    <p>Dieser Fall zeigt:</p>
+
+    <ul>
+    <li>Progressive Lernkurve für Fachexperten</li>
+    <li>Übertragbarkeit der Modellierungssprache</li>
+    <li>Fähigkeit zur Abbildung operativer Geschäftslogik</li>
+    <li>Reales Feedback als Treiber der Engine-Weiterentwicklung</li>
+    </ul>
+
+    </div>
+    </section>
+
+    <!-- KEY POINT -->
+    <section class="key-point">
+    <div class="container">
+
+    <h2>Kernaussage</h2>
+
+    <p>
+        Ein Fachexperte hat nach minimaler Einarbeitung
+        ein vollständiges operatives System generiert und gepflegt,
+        ohne den Code zu verändern, sondern direkt über das Modell gearbeitet.
+    </p>
+
+    </div>
+    </section>
+
+    <section class="case-navigation">
+  <div class="container">
+
+    <div class="case-nav">
+
+      <a class="case-prev" href="case-nardi.html">
+        &larr; Vorheriger Fall
+      </a>
+
+      <a class="case-next" href="case-maat.html">
+        N&auml;chster Fall &rarr;
+      </a>
+
+    </div>
+
+  </div>
+</section>    
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="evolution.html">Motorentwicklung</a> |
+            <a href="background.html">Background</a> |
+            <a href="contact.html">Kontakt</a> |
+            <a href="nda.html">NDA / Legal</a>
+        </div>
+        <p>© 2026 MySirt</p>
+    </div>
+</footer>
+<!-- LIGHTBOX CONTAINER -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+    <img id="lightbox-img" onclick="closeLightbox()">
+</div>
+<script>
+function openLightbox(src) {
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    img.src = src;
+    lb.classList.add("is-open");
+    // Blocca lo scroll della pagina
+    document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    lb.classList.remove("is-open");
+    img.removeAttribute("src");
+        // Ripristina lo scroll della pagina
+        document.body.style.overflow = "";
+    }
+    </script>
+
+    </body>
+    </html>
