@@ -1,2 +1,2 @@
 # mysirt
-MySirt – Generative, model-driven application platform
+MySirt – Generative, model-driven execution engine
